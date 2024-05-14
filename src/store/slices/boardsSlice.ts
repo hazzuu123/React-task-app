@@ -1,0 +1,13 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  modalActive: false,
+  boardArray: [],
+};
+const boardsSlice = createSlice({
+  name: "boards",
+  initialState: initialState,
+  reducers: {},
+});
+
+export const boardsReducer = boardsSlice.reducer;
