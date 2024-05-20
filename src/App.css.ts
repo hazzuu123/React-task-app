@@ -35,7 +35,7 @@ export const vars = createGlobalTheme(":root", {
     body: "arial",
   },
   shadow: {
-    basic: "4px 4px 8px 0px rgba(34, 60, 0.2)",
+    basic: "4px 4px 8px 0px rgb(191 191 185 / 50%)",
   },
   minWidth: {
     list: "250px",
