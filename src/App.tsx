@@ -4,8 +4,11 @@ import { appConatiner, board, buttons } from "./App.css.ts";
 import BoardList from "./components/BoardList/BoardList.tsx";
 import ListsContainer from "./components/ListsContainer/ListsContainer.tsx";
 import { useTypedSelector } from "./hooks/redux.ts";
+import EditModal from "./components/EditModal/EditModal.tsx";
+// import LoggerModal from "./components/LoggerModal/LoggerModal.tsx";
 
 function App() {
+  // const [isLoggerOpen, setisLoggerOpen] = useState(false);
   const [activeBoardId, setActiveBoardId] = useState("board-0");
   const boards = useTypedSelector((state) => state.boards.boardArray);
 
@@ -14,8 +17,12 @@ function App() {
   )[0];
 
   const lists = getActiveBoard.lists;
+
+  const modalAcitve = useTypedSelector((state) => state.boards.modalActive);
   return (
     <div className={appConatiner}>
+      {/* {isLoggerOpen ? <LoggerModal setisLoggerOpen={setisLoggerOpen} /> : null} */}
+      {modalAcitve ? <EditModal /> : null}
       <BoardList
         activeBoardId={activeBoardId}
         setActiveBoardId={setActiveBoardId}
